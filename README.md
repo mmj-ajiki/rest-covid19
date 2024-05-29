@@ -61,7 +61,7 @@ python src/test.py
 
 This server provides REST API endpoints, each of which returns a common JSON structure:
 
-```json
+```bash
 {
    'keys': ['key1', 'key2', ... 'keyN'], # A list of keys used in the records
    'records': [
@@ -91,7 +91,7 @@ Response:
 
 Response Example:
 
-```json
+```bash
 {
    'keys': ['country', 'shortname'], 
    'records': [
@@ -124,7 +124,7 @@ Response:
 
 Response Example:
 
-```json
+```bash
 {
    'keys': ['active', 'critical', 'recovered', 'cases', 'deaths', 'tests'],
    'records': [
@@ -152,7 +152,7 @@ Response:
 
 Response Example:
 
-```json
+```bash
 {
    'keys': ['date', 'num_cases', 'num_deaths'], 
    'records': [
