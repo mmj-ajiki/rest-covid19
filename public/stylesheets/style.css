@@ -1,120 +1,56 @@
 
-body{
-	background: #FFFFF0;
-	font-size: 95%;
-	color: #111;
-	font-family: Meiryo, Verdana, Arial, Helvetica, sans-serif;;
+body {
+    font: 14px Verdana, Helvetica, Arial, sans-serif;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
-
-ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	border: 1px solid #ddd;
-	border-radius: 2px;
-}
-
-ul li {
-	border-bottom: 1px solid #ddd;
-	border-top: 1px solid #fff;
-	padding: 5px 10px;
-	background:url(../img/li_bg.gif) repeat-x;
-}
-
-ul li a {
-	display: block
-}
-
-ul li:hover {
-	background-color: transparent;
-	color: #6699CC;
-	text-decoration: none;
-}
-
-p.notice {
-    font-size:80%;
-    color:blue;
+  
+.container {
+    width: 250px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 h1 {
-    color: white;
-    background-color:  #1B9973;
-    height: 40px;
-    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 h2 {
-    color: white;
-    background-color:  #1B9973;
-    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-table {
-    border-collapse: separate;
-    border-spacing: 0px;
-    border-top: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-}
-
-th {
-    padding: 4px;
+h3 {
     text-align: left;
-    vertical-align: top;
-    color: #444;
-    background-color: #F5F5F5; /* whitesmoke */
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    font-family: Meiryo, Verdana, Arial, Helvetica, sans-serif;
+    margin-bottom: 5px;
 }
 
-td {
-    padding: 4px;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #FFFFFF;
-    font-family: Meiryo, Verdana, Arial, Helvetica, sans-serif;
+input[type="text"],
+input[type="password"] {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 120%;
 }
-
-input[type="text"],[type="date"],[type="number"] {
-    border:0;
-    padding:3px;
-    font-size:1.1em;
-    font-family: Meiryo, Verdana, Arial, Helvetica, sans-serif;
-    color:#444;
-    border:solid 1px #ccc;
-    margin:0 0 3px;
-    width:300px;
+  
+input[type="submit"],
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 120%;
 }
-
-input[type="submit"],[type="reset"] {  
-	border-top: 1px solid #ccc;  
-	border-right: 1px solid #999;  
-	border-bottom: 1px solid #999;  
-	border-left: 1px solid #ccc;  
-	padding: 5px 20px;  
-	font-weight: bold;  
-	cursor: pointer;  
-    color: #666; 
-    font-family: Meiryo, Verdana, Arial, Helvetica, sans-serif;
-}
-
-button {  
-	border-top: 1px solid #ccc;  
-	border-right: 1px solid #999;  
-	border-bottom: 1px solid #999;  
-	border-left: 1px solid #ccc;  
-	padding: 5px 20px;  
-	font-weight: bold;  
-	cursor: pointer;  
-    color: #666; 
-    font-family: Meiryo, Verdana, Arial, Helvetica, sans-serif;
-}
-
-textarea {
-    resize: none;
-    overflow-y: scroll;
-    font-size: 105%;
-    font-family: Meiryo, Verdana, Arial, Helvetica, sans-serif;
-}
+  
+button[type="submit"]:hover {
+    background-color: #45a049;
+}  

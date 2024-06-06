@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div(class="container")
+    h1= title
+    form(method='get' action="/auth_local")
+      input(type="submit", value="Authentication")
+    br
+    if available > 0
+      form(method='post' action="/token")
+        input(type="hidden" name="grant_type" value=grant_type)
+        input(type="hidden" name="code" value=code)
+        input(type="hidden" name="redirect_uri" value=redirect_uri)
+        input(type="hidden" name="client_id" value=client_id)
+        input(type="hidden" name="code_verifier" value=code_verifier)
+        input(type="submit", value="Get Token")

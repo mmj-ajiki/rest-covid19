@@ -13,7 +13,7 @@
 import httpGet from '../api/http_get.js';
 import dotenv from 'dotenv'
 dotenv.config();
-const restURL=process.env.REST_URL;
+const restURL=process.env.COVID19_REST_URL;
 // Development mode
 const devMode = process.env.NODE_ENV == 'development' ? true : false;
 
@@ -114,5 +114,6 @@ export { getCountryInfo, getCountries }
 
 /*
  * FILE HISTORY
+ * [2] JUN-06-2024 - Changed REST_URL to COVID19_REST_URL
  * [1] MAY-29-2024 - Initial version
  */

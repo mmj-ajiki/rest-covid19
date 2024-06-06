@@ -1,6 +1,6 @@
 'use strict';
 /*
- * [FILE] index.js
+ * [FILE] top.js
  * 
  * [DESCRIPTION]
  *  Open the top page of the Sample REST Server
@@ -12,7 +12,7 @@ const router = express.Router();
 
 /*
  * GET Method
- * End Point: /index
+ * End Point: /top
  * 
  * [DESCRIPTION]
  *  Open the top page
@@ -25,15 +25,16 @@ const router = express.Router();
  *  JSON including keys: error
  * 
  * [NOTE]
+ *  The 'available' key is used to hide the Get Token button.
  * 
  */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome to COVID-19 REST Server' });
+  res.render('top', { title: 'COVID-19 REST Server', available: 0 });
 });
 
 export default router;
 
 /*
  * FILE HISTORY
- * [1] MAY-29-2024 - Initial version
+ * [1] JUN-06-2024 - Initial version
  */

@@ -11,17 +11,29 @@
 import sys
 import requests
 
+args_count = len(sys.argv) - 1
+if args_count < 1:
+    print("How to run:")
+    print("$ python src/test.py <Access Token>")
+    sys.exit()
+
 # Change the URL as your environment
 rest_url = 'http://localhost:5000/rest'
 print("[REST URL]", rest_url)
 
+# Set the current token here
+token = sys.argv[1]
+
 # Header
-headers = {'content-type': 'application/json'}
+headers = {
+    'content-type': 'application/json',
+    'Authorization': 'Bearer ' + token
+}
 
 # Confirm if the server works
 res_data = None
 try:
-    response = requests.get(rest_url + "/test")
+    response = requests.get(rest_url + "/test", headers=headers)
     res_data = response.json()
 except requests.exceptions.RequestException as err:
     print("[Server Connection Error]:", err)
@@ -33,7 +45,7 @@ else:
     sys.exit()
 
 # Get available countries
-response = requests.get(rest_url+"/countries")
+response = requests.get(rest_url+"/countries", headers=headers)
 res_data = response.json()
 print("---- Results from /countries -----")
 print(res_data)
@@ -68,5 +80,6 @@ print(res_data)
 
 #
 # HISTORY
+# [2] JUN-02-2024 - Added Authorization to the header
 # [1] MAY-29-2024 - First release
 #

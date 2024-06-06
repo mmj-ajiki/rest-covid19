@@ -8,6 +8,22 @@ This resource server provides sample REST APIs based on [disease.sh](https://dis
 
 Referring to [https://nodejs.org/ja/download/](https://nodejs.org/ja/download/), install Node.js.
 
+### Generating Public and Private Keys
+
+You need to install openssl ([https://www.openssl.org/](https://www.openssl.org/) to generate keys for authentication.
+
+Generate a private key file and put it in the folder specified by an environment variable 'PRIVATE_KEY_FILE'.
+
+```bash
+openssl genpkey -algorithm RSA -out keys/private.pem -pkeyopt rsa_keygen_bits:2048
+```
+
+Generate a public key file and put it in the folder specified by an environment variable 'PUBLIC_KEY_FILE'.
+
+```bash
+openssl rsa -pubout -in keys/private.pem -out keys/public.pem
+```
+
 ### Installing the Server
 
 Using a command prompt, run the following command to instal dependent packages of Node.js.
@@ -40,21 +56,39 @@ npm start
 
 ### Environmental Variables
 
-When you start the server, it refers to a couple of environmental variables that are defined in .env file.
-Edit the file to change variables as your settings.
+When you start the server, it refers to some environmental variables that are defined in .env file.
+You can find a template file named 'env.tpl' and edit the file to set variables, and rename it to .env.
 
 |  Variable Name  |  Description  |
 | ---- | ---- |
+|  CLIENT_ID | Client ID for authentication |
+|  COVID19_REST_URL  | Root API URL of the COVID-19 API (do not change) |
+|  PRIVATE_KEY_FILE | Private key file path |
+|  PUBLIC_KEY_FILE  | Public key file path |
+|  REDIRECT_URI | Callback path for authentication |
 |  REST_PORT | Port number of this REST server (initial setting: 5000) |
-|  REST_URL  | Root API URL of the COVID-19 API (do not change) |
 
 ### Testing
 
 Install Python from [https://www.python.org/downloads/](https://www.python.org/downloads/).
-After running the server, run a test program implemented in Python:
+After running the server, access to the local host such as <http://localhost:5000> from a Web browser. On the browser, follow the steps:
+
+- Click the Authentication button on the top page
+- Enter a user name and the password, then click the Login button
+- 'Get Token' appears on the top page, click it
+- Access token is shown as follows:
 
 ```bash
-python src/test.py
+{
+  "access_token": "eyJhbGciOiJSUzI1NiJ9...",
+  "token_type": "Bearer"
+}
+```
+
+Run a test program implemented in Python. It exists underneath the src folder.
+
+```bash
+python src/test.py <Access token>
 ```
 
 ### REST APIs
@@ -166,4 +200,5 @@ Response Example:
 
 ### Updated History
 
-* May 29, 2024 - First release
+- June 6, 2024 - Added authentication
+- May 29, 2024 - First release

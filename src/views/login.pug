@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(class="container")
+    h2= title
+    form(method='post' action="/login")
+      input(type="hidden" name="client_id" value=client_id)
+      input(type="hidden" name="redirect_uri" value=redirect_uri)
+      input(type="hidden" name="state" value=state)
+      input(type="hidden" name="code_challenge" value=code_challenge)
+      input(type="hidden" name="code_challenge_method" value=code_challenge_method)
+      input(type="hidden" name="code_verifier" value=code_verifier)
+      input(required type="text", name='username', placeholder="Username")
+      input(required type="password", name='password', placeholder="Password")
+      input(type="submit", value="Login")
