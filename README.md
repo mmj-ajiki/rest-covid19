@@ -10,7 +10,7 @@ Referring to [https://nodejs.org/ja/download/](https://nodejs.org/ja/download/),
 
 ### Generating Public and Private Keys
 
-You need to install openssl ([https://www.openssl.org/](https://www.openssl.org/) to generate keys for authentication.
+You need to install openssl ([https://www.openssl.org/](https://www.openssl.org/)) to generate keys for authentication.
 
 Generate a private key file and put it in the folder specified by an environment variable 'PRIVATE_KEY_FILE'.
 
@@ -105,6 +105,14 @@ This server provides REST API endpoints, each of which returns a common JSON str
        {'key1': value-1m, 'key2': value-2m, ... 'keyN': value-Nm}, 
    ],
    'message': Error message or null(success)
+}
+```
+
+Each endpoint requires a Bearer token for authentication in the header as follows:
+
+```bash
+{
+    'Authorization': 'Bearer <Access token>'
 }
 ```
 
