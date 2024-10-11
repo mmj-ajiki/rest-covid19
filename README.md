@@ -95,7 +95,7 @@ python src/test.py <Access token>
 
 This server provides REST API endpoints, each of which returns a common JSON structure:
 
-```json
+```bash
 {
    'keys': ['key1', 'key2', ... 'keyN'], # A list of keys used in the records
    'records': [
@@ -110,7 +110,7 @@ This server provides REST API endpoints, each of which returns a common JSON str
 
 Each endpoint requires a Bearer token for authentication in the header as follows:
 
-```json
+```bash
 {
     'Authorization': 'Bearer <Access token>'
 }
@@ -133,7 +133,7 @@ Response:
 
 Response Example:
 
-```json
+```bash
 {
    'keys': ['country', 'shortname'], 
    'records': [
