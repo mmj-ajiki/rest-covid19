@@ -95,7 +95,7 @@ python src/test.py <Access token>
 
 This server provides REST API endpoints, each of which returns a common JSON structure:
 
-```bash
+```json
 {
    'keys': ['key1', 'key2', ... 'keyN'], # A list of keys used in the records
    'records': [
@@ -110,7 +110,7 @@ This server provides REST API endpoints, each of which returns a common JSON str
 
 Each endpoint requires a Bearer token for authentication in the header as follows:
 
-```bash
+```json
 {
     'Authorization': 'Bearer <Access token>'
 }
@@ -133,7 +133,7 @@ Response:
 
 Response Example:
 
-```bash
+```json
 {
    'keys': ['country', 'shortname'], 
    'records': [
@@ -206,7 +206,15 @@ Response Example:
 }
 ```
 
+### Testing with GEMBA Note
+
+- Restore the backup file (covid-19__<Version>__backup.gncproj) underneath the package folder in GEMBA Note
+- Confirm that this sample server runs
+  - If you run it on Windows as a local server, make the loopback adapter available using a command prompt --> [Notices for Windows OS](./NoticesForWindows.md)
+- Open the "Getting Started" note in the development package folder and read the steps to run the app
+
 ### Updated History
 
+- October 11, 2024 - Updated packages
 - June 6, 2024 - Added authentication
 - May 29, 2024 - First release
